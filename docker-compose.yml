@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  ml_api_python:
+    build: ml_api_python
+    tty: true
+    ports:
+      - "5000:5000"
+    command: python3.7 app.py
+
+  server:
+    build: server
+    tty: true
+    ports:
+      - "8080:8080"
+
