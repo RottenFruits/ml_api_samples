@@ -1,6 +1,12 @@
 library(kernlab)
 model <- readRDS("model/model.obj")
 
+#* @filter cors
+cors <- function(res) {
+  res$setHeader("Access-Control-Allow-Origin", "*")
+  plumber::forward()
+}
+
 #* @post /predict
 function(feature){
   df <- data.frame(Sepal.Length = feature[1],
