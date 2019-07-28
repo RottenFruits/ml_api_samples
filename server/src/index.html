@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{{.Title}}</title>
+  </head>
+  <body>
+    {{.Title}} {{.Count}} count
+
+    <form method="POST" action="http://0.0.0.0:5000/predict">
+        <label>sepal length：</label>
+        <input type="text" name="sepal_length" /><br />
+        <label>sepal width：</label>
+        <input type="text" name="sepal_width" /><br />
+        <label>petal length：</label>
+        <input type="text" name="petal_length" /><br />
+        <label>petal width：</label>
+        <input type="text" name="petal_width" /><br />
+        <input type="submit" value="送信" />
+    </form>
+        
+  </body>
+</html>
