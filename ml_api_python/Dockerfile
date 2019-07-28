@@ -6,6 +6,7 @@ RUN apt-get update && \
 RUN curl https://bootstrap.pypa.io/get-pip.py get-pip.py | python3.7
 
 RUN pip install Flask &&\
+    pip install flask-cors &&\
     pip install scikit-learn
 
 COPY src/ /home/src
