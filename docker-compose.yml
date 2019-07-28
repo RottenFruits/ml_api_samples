@@ -8,6 +8,13 @@ services:
       - "5000:5000"
     command: python3.7 app.py
 
+  ml_api_r:
+    build: ml_api_r
+    tty: true
+    ports:
+      - "6000:6000"
+    command: Rscript app/app.R
+
   server:
     build: server
     tty: true
