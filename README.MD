@@ -26,19 +26,26 @@ docker-compose up -d
    - http://0.0.0.0:8080/
 
 - select api type
+
 ![p1](https://raw.githubusercontent.com/RottenFruits/ml_api_samples/master/png/p1.png)
 
 - input data
+
 ![p2](https://raw.githubusercontent.com/RottenFruits/ml_api_samples/master/png/p2.png)
 
 - submit, return result
+
 ![p3](https://raw.githubusercontent.com/RottenFruits/ml_api_samples/master/png/p3.png)
 
 ### Command line
 
+- python api exection command
 ```bash
 curl http://0.0.0.0:5000/predict -X POST -H 'Content-Type:application/json' -d '{"feature":[1, 1, 1, 1]}'
+```
 
+- r api exection command
+```bash
 curl http://0.0.0.0:6100/predict -X POST -H 'Content-Type:application/json' -d '{"feature":[1, 1, 1, 1]}'
 ```
 
