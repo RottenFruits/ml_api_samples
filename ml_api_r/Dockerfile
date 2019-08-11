@@ -7,4 +7,4 @@ COPY src/ /home/src
 
 WORKDIR /home/src
 
-EXPOSE 6000
+EXPOSE 6100

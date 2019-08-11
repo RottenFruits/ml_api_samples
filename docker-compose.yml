@@ -12,8 +12,15 @@ services:
     build: ml_api_r
     tty: true
     ports:
-      - "6000:6000"
+      - "6100:6100"
     command: Rscript app/app.R
+
+  ml_api_julia:
+    build: ml_api_julia
+    tty: true
+    ports:
+      - "7000:7000"
+    command: julia app/app.jl
 
   server:
     build: server

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{{.Title}}</title>
+  </head>
+  <body>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+
+    <h1>Julia prediction api sample</h1>
+    <label>sepal length：</label>
+    <input type="text" id="sepal_length" /><br/>
+    <label>sepal width：</label>
+    <input type="text" id="sepal_width" /><br/>
+    <label>petal length：</label>
+    <input type="text" id="petal_length" /><br/>
+    <label>petal width：</label>
+    <input type="text" id="petal_width" /><br/>
+    <input type="button" id=submit value="送信" />
+    <span id="result"></span>
+    
+    <script type="text/javascript">
+        $(function(){
+          $("#submit").click(function(){
+            var sepal_length = $("#sepal_length").val();
+            var sepal_width = $("#sepal_width").val();
+            var petal_length = $("#petal_length").val();
+            var petal_width = $("#petal_width").val();
+            data = {"feature":[sepal_length, sepal_width, petal_length, petal_width]};
+            data = JSON.stringify(data);
+
+            $.ajax({
+              type: "POST",
+              url: "http://0.0.0.0:7000/predict",
+              contentType: "application/json; charset=utf-8", 
+              dataType: 'json',
+              data: data,
+
+            success: function(json) {
+                dataType: "json",  
+                $("#result").text(json.prediction);
+                console.log(json);
+            },
+            error: function() {
+                $('#result').text('error');
+            }
+            });
+          });
+        });
+    </script>
+
+  </body>
+</html>
