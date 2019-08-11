@@ -52,6 +52,6 @@ curl http://0.0.0.0:6100/predict -X POST -H 'Content-Type:application/json' -d '
 
 ## References
 
-- [Python(Flask) でサクッと 機械学習 API を作る](https://qiita.com/fam_taro/items/1464c42324f15d7b8223])
+- [Python(Flask) でサクッと 機械学習 API を作る](https://qiita.com/fam_taro/items/1464c42324f15d7b8223)
 
 - [Rのコードをweb APIに {plumber}](https://qiita.com/masaki_kubota/items/a5ccc6504a697c0e89f8)
